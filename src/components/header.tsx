@@ -31,7 +31,7 @@ const Header = () => {
         {/* Just login + book, no nav links */}
         <div className="flex items-center gap-3">
           <Dialog>
-            <DialogTrigger asChild>
+            <DialogTrigger>
               <Button
                 variant="ghost"
                 className="text-[14px] font-medium text-[#0F172A]/70 hover:bg-[#0F172A]/5 hover:text-[#0F172A]"
