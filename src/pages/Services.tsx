@@ -43,7 +43,6 @@ import {
   Plus,
   type LucideIcon,
 } from "lucide-react";
-import { useAuth } from "../context/AuthContext";
 import api from "@/api/axios";
 
 interface Service {
@@ -299,10 +298,7 @@ export default function Services() {
                   </DialogTitle>
                 </DialogHeader>
 
-                <form
-                  onSubmit={handleSubmit}
-                  className="flex flex-col gap-4"
-                >
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                   {formError && (
                     <div className="rounded-lg bg-rose-50 px-3 py-2 text-xs text-rose-700 sm:text-sm">
                       {formError}
@@ -325,10 +321,7 @@ export default function Services() {
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <Label
-                      htmlFor="description"
-                      className="text-xs sm:text-sm"
-                    >
+                    <Label htmlFor="description" className="text-xs sm:text-sm">
                       Description
                     </Label>
                     <Textarea

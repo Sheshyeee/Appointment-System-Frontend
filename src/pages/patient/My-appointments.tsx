@@ -5,7 +5,6 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
@@ -26,7 +25,6 @@ import {
 } from "lucide-react";
 
 import api from "@/api/axios";
-import { useAuth } from "@/context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 
 // ---------------- Types ----------------
@@ -119,7 +117,7 @@ function formatLastUpdated(ts: number | null) {
 }
 
 export default function MyAppointments() {
-  const { user } = useAuth();
+  
   const [appointments, setAppointments] = useState<Appointment[]>(
     () => appointmentsCache?.data ?? [],
   );

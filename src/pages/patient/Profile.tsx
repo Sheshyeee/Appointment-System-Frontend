@@ -29,7 +29,6 @@ import {
   RefreshCw,
 } from "lucide-react";
 import api from "@/api/axios";
-import { useAuth } from "@/context/AuthContext";
 
 interface ProfileData {
   id: number;
@@ -89,8 +88,6 @@ function formatLastUpdated(ts: number | null) {
 }
 
 export default function Profile() {
-  const { user } = useAuth();
-
   const [profile, setProfile] = useState<ProfileData | null>(
     () => profileCache?.data ?? null,
   );
@@ -263,7 +260,9 @@ export default function Profile() {
                     {initials(profile.name || "?")}
                   </div>
                   <div className="min-w-0">
-                    <h2 className="text-base font-bold sm:text-lg">{profile.name}</h2>
+                    <h2 className="text-base font-bold sm:text-lg">
+                      {profile.name}
+                    </h2>
                     <p className="truncate text-xs text-muted-foreground sm:text-sm">
                       {profile.email}
                     </p>
